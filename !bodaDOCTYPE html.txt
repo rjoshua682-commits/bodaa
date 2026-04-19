@@ -1,0 +1,161 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Joshua & Michelle</title>
+
+<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@500&family=Montserrat:wght@300&display=swap" rel="stylesheet">
+
+<style>
+body {
+  margin:0;
+  font-family: 'Montserrat', sans-serif;
+  background:#2b0a12;
+  color:#fff;
+  text-align:center;
+}
+
+section {
+  padding:60px 20px;
+}
+
+h1,h2 {
+  font-family: 'Playfair Display', serif;
+}
+
+.hero {
+  background: linear-gradient(rgba(43,10,18,0.7), rgba(43,10,18,0.9)),
+  url('https://images.unsplash.com/photo-1522673607200-164d1b6ce486');
+  background-size:cover;
+  background-position:center;
+  height:100vh;
+  display:flex;
+  flex-direction:column;
+  justify-content:center;
+}
+
+.hero h1 {
+  font-size:3em;
+  color:#d4af37;
+}
+
+.fecha {
+  font-size:1.5em;
+  margin-top:10px;
+}
+
+.countdown {
+  font-size:2em;
+  margin-top:20px;
+  color:#d4af37;
+}
+
+.card {
+  background:#3b0f19;
+  margin:20px auto;
+  padding:20px;
+  border-radius:10px;
+  max-width:500px;
+}
+
+.gold {
+  color:#d4af37;
+}
+
+button {
+  background:#d4af37;
+  border:none;
+  padding:15px 25px;
+  font-size:1em;
+  border-radius:5px;
+  cursor:pointer;
+}
+
+a.whatsapp {
+  display:inline-block;
+  margin-top:20px;
+  background:#25D366;
+  color:#fff;
+  padding:15px 25px;
+  border-radius:5px;
+  text-decoration:none;
+  font-weight:bold;
+}
+</style>
+</head>
+
+<body>
+
+<section class="hero">
+  <h1>Joshua & Michelle</h1>
+  <div class="fecha">18 de julio de 2026</div>
+  <div class="countdown" id="countdown"></div>
+</section>
+
+<section>
+  <h2 class="gold">Con la bendición de Dios</h2>
+  <p>Tenemos el honor de invitarte a celebrar nuestra unión</p>
+</section>
+
+<section>
+  <h2 class="gold">Ceremonia</h2>
+  <div class="card">
+    <p>2:00 PM</p>
+    <p>Iglesia de Curridabat</p>
+  </div>
+
+  <h2 class="gold">Recepción</h2>
+  <div class="card">
+    <p>4:00 PM</p>
+    <p>Salón Cascada de Fuego</p>
+  </div>
+</section>
+
+<section>
+  <h2 class="gold">Nuestra Historia</h2>
+  <p>El destino unió nuestros caminos y hoy decidimos caminar juntos para siempre. 
+  Queremos que seas parte de este momento tan especial en nuestras vidas.</p>
+</section>
+
+<section>
+  <h2 class="gold">Galería</h2>
+  <img src="https://images.unsplash.com/photo-1522673607200-164d1b6ce486" width="80%">
+</section>
+
+<section>
+  <h2 class="gold">Ubicación</h2>
+  <p>Puedes abrir la ubicación en Google Maps:</p>
+  <a href="https://maps.google.com" target="_blank" class="whatsapp">Ver mapa</a>
+</section>
+
+<section>
+  <h2 class="gold">Confirma tu asistencia</h2>
+  <a class="whatsapp" 
+     href="https://wa.me/50689088986?text=Hola%20confirmo%20mi%20asistencia%20a%20la%20boda%20de%20Joshua%20y%20Michelle">
+     Confirmar por WhatsApp
+  </a>
+</section>
+
+<section>
+  <p>Con amor, Joshua & Michelle</p>
+</section>
+
+<script>
+const countdown = document.getElementById("countdown");
+const weddingDate = new Date("July 18, 2026 14:00:00").getTime();
+
+setInterval(() => {
+  const now = new Date().getTime();
+  const distance = weddingDate - now;
+
+  const days = Math.floor(distance / (1000 * 60 * 60 * 24));
+  const hours = Math.floor((distance / (1000*60*60)) % 24);
+  const minutes = Math.floor((distance / (1000*60)) % 60);
+
+  countdown.innerHTML = days + " días " + hours + "h " + minutes + "m";
+}, 1000);
+</script>
+
+</body>
+</html>
